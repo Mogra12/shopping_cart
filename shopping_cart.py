@@ -19,11 +19,11 @@ class ShoppingCart:
 
 __shopping_cart = ShoppingCart()
 print("-"*30)
-qty___items = int(input("How much __items you want add? "))
+qty___items = int(input("How much items you want add? "))
 try:
     for i in range(0,qty___items):
         __item_name = input(f"Enter item name {i+1}: ").rstrip()
-        __price = float(input(f"Enter item __price {i+1}: ").replace(",","."))
+        __price = float(input(f"Enter item price {i+1}: ").replace(",","."))
         __shopping_cart.add_item(__item_name, __price)
         print("-"*30)
 except ValueError:
