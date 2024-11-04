@@ -1,32 +1,32 @@
 class ShoppingCart:
     def __init__(self):
-        self.items = []
-    
-    def add_item(self, item_name, price):
-        item = (item_name, price)
-        self.items.append(item)
+        self.__items = []
+            
+    def add_item(self, __item_name, __price):
+        item = (__item_name, __price)
+        self.__items.append(item)
 
-    def remove_item(self, item):
-        if item in self.items:
-            self.items.remove(item)
-            print(f"{item} removed successfully")
+    def remove_item(self, __item):
+        if __item in self.__items:
+            self.__items.remove(__item)
+            print(f"{__item} removed successfully")
     
     def get_total(self):
         total = 0
-        for i in self.items:
+        for i in self.__items:
             total += i[1]
         return total
 
 shopping_cart = ShoppingCart()
 print("-"*30)
-qty_items = int(input("How much items you want add? "))
+qty___items = int(input("How much __items you want add? "))
 try:
-    for i in range(0,qty_items):
-        item_name = input(f"Enter item name {i+1}: ").rstrip()
-        price = float(input(f"Enter item price {i+1}: ").replace(",","."))
-        shopping_cart.add_item(item_name, price)
+    for i in range(0,qty___items):
+        __item_name = input(f"Enter item name {i+1}: ").rstrip()
+        __price = float(input(f"Enter item __price {i+1}: ").replace(",","."))
+        shopping_cart.add_item(__item_name, __price)
         print("-"*30)
 except ValueError:
     print("Invalid input. Please enter a valid number.")
-print(f"Was added these products: {shopping_cart.items}")
+print(f"Was added these products: {shopping_cart.__items}")
 print(f"Total: R$ {shopping_cart.get_total():.2f}".replace(",","."))
